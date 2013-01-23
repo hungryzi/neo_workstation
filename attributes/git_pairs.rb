@@ -1,6 +1,6 @@
-node.default["git_pairs_domain"]  = "neo.com"
+node.set["git_pairs_domain"]  = "neo.com"
 
-node.default["git_pairs_authors"] = [
+node.set["git_pairs_authors"] = [
   {"initials" => "as" , "name" => "Abhaya Shenoy"},
   {"initials" => "dg" , "name" => "Diego Garcia"},
   {"initials" => "mk" , "name" => "Mohan Krishnan"},
