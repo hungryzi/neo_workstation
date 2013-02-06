@@ -5,7 +5,7 @@ node.set["git_pairs_authors"] = [
   {"initials" => "dg" , "name" => "Diego Garcia"},
   {"initials" => "mk" , "name" => "Mohan Krishnan"},
   {"initials" => "mm" , "name" => "Mike Mazur"},
-  {"initials" => "tm" , "name" => "Tomek Maskowski"},
+  {"initials" => "tm" , "name" => "Tomek Maszkowski"},
   {"initials" => "ts" , "name" => "Tommy Sullivan"},
   {"initials" => "wei", "name" => "Wei Lu"},
   {"initials" => "wt" , "name" => "Winston Teo"},
