@@ -19,7 +19,7 @@ end
 end
 
 [ 
-  "keymaps/newcontext.xml",
+  "keymaps/neo.xml",
   "templates/Ruby.xml", 
   "templates/jasmine.xml"
 ].each do |file|
