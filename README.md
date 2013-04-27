@@ -7,8 +7,8 @@ A Chef cookbook of recipes that are specific to Neo and which extends [pivotal_w
 1. Create `Cheffile` in home directory
 
         site "http://community.opscode.com/api/v1"
-        cookbook "pivotal_workstation", :git => "https://github.com/pivotal/pivotal_workstation
-        cookbook "neo_workstation", :git => "https://github.com/neo/neo_workstation
+        cookbook "pivotal_workstation", :git => "https://github.com/pivotal/pivotal_workstation"
+        cookbook "neo_workstation", :git => "https://github.com/neo/neo_workstation"
 
 2. Create `soloistrc` in home directory
 
