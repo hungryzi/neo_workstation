@@ -9,5 +9,5 @@ node.set["git_pairs_authors"] = [
   {"initials" => "ts" , "name" => "Tommy Sullivan"},
   {"initials" => "wei", "name" => "Wei Lu"},
   {"initials" => "wt" , "name" => "Winston Teo"},
-  {"initials" => "zi" , "name" => "Huong Vu (Zi)"}
+  {"initials" => "zi" , "name" => "Zi"}
 ]
