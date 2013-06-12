@@ -12,14 +12,14 @@ git "#{Chef::Config[:file_cache_path]}/monospace_fonts" do
   action :sync
 end
 
-directory "/Users/#{WS_USER}/Library/Fonts" do
+directory "/Users/#{node['current_user']}/Library/Fonts" do
   action :create
   recursive true
   mode "0755"
-  owner WS_USER
+  owner node['current_user']
 end
 
 execute "Copying fonts to ~/Library/Fonts" do
-  user WS_USER
+  user node['current_user']
   command "cp -f #{Chef::Config[:file_cache_path]}/monospace_fonts/*.otf $HOME/Library/Fonts"
 end

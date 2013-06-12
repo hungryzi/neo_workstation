@@ -1,10 +1,10 @@
-rubymine_pref_dir = "#{WS_HOME}/Library/Preferences/RubyMine50"
+rubymine_pref_dir = "#{node['sprout']['home']}/Library/Preferences/RubyMine50"
 git_repo_location = "#{Chef::Config[:file_cache_path]}/rubymine-preferences"
 
 git git_repo_location do
   repository "https://github.com/neo/rubymine-preferences.git"
   action :sync
-  user WS_USER
+  user node['current_user']
 end
 
 [
@@ -13,7 +13,7 @@ end
     [rubymine_pref_dir, "colors"]
 ].each do |dirs|
   recursive_directories dirs do
-    owner WS_USER
+    owner node['current_user']
     mode "0755"
     recursive true
   end
