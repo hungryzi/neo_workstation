@@ -1,5 +1,5 @@
 include_recipe "pivotal_workstation::git"
-include_recipe "pivotal_workstation::zsh"
+include_recipe "sprout-osx-apps::zsh"
 
 ::PREZTO_DIR = ::File.expand_path(".zprezto", node['sprout']['home'])
 
