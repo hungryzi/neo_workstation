@@ -14,10 +14,17 @@ ruby_block "ensure neo_workstation can manage #{node["vim_home"]}" do
     unless system("#{missing} || (#{present} && #{owned_by_pw})")
       raise "Rename or delete #{node["vim_home"]} if you want to use this recipe"
     end
+
+    vimrc = "test ! -e ~/.vimrc"
+    gvimrc = "test ! -e ~/.gvimrc"
+
+    #if system("#{vimrc} || #{gvimrc}")
+    #  raise "Please remove or rename your ~/.vimrc, ~/.gvimrc"
+    #end
   end
 end
 
-git node["vim_home"] do
+git "#{Chef::Config[:file_cache_path]}/vim-config" do
   repository node["vim_config_git"]
   branch "master"
   revision "HEAD"
@@ -26,17 +33,12 @@ git node["vim_home"] do
   enable_submodules true
 end
 
-%w{vimrc gvimrc}.each do |vimrc|
-  link "#{node['sprout']['home']}/.#{vimrc}" do
-    to "#{node["vim_home"]}/#{vimrc}"
-    owner node['current_user']
-    not_if { File.symlink?("#{node["vim_home"]}/#{vimrc}") }
-  end
+execute "symlink the dotfiles" do
+  cwd "#{Chef::Config[:file_cache_path]}/vim-config"
+  command "rake"
 end
 
-file "#{node['sprout']['home']}/.vimrc.local" do
-  action :touch
-  owner node['current_user']
-  not_if { File.exists?("#{node['sprout']['home']}/.vimrc.local") }
+execute "run BundleInstall" do
+  command "vim +BundleInstall +qall"
 end
 
